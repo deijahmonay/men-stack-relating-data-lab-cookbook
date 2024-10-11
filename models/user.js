@@ -12,7 +12,7 @@ const foodSchema = new mongoose.Schema({
   },
   category: {
     type: String,
-    enum: ['bakery', 'beverages', 'dairy', 'deli', 'produce', 'protein', 'snacks'],
+    enum: ['bakery', 'beverages', 'deli', 'produce', 'snacks'],
   },
 });
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Food Item</title>
+</head>
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+  <form action="/users/<%= user._id %>/foods" method="POST">
+    <label for="food">Food</label>
+    <input type="text" nme="food" id="food"/>
+
+    <label for="perishable">Peerishable</label>
+    <select id="perishable" name="perishable">
+      <option value="none">Select an option</option>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+    <label for="catergory">Category</label>
+    <select id="catergory" name="category">
+    <option value="none">Select an option</option>
+    <option value="bakery">Bakery</option>
+    <option value="deli">Deli</option>
+    <option value="produce">Produce</option>
+    <option value="snacks">Snacks</option>
+  </select>
+
+  <button type="submit">Add to your pantry</button>
+  </form>
+</body>
+</html>
