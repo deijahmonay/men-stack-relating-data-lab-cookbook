@@ -6,7 +6,6 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const morgan = require('morgan');
 const session = require('express-session');
-
 const authController = require('./controllers/auth.js');
 const foodController = require('./controllers/food.js');
 
@@ -29,6 +28,7 @@ app.use(
   })
 );
 app.use('/foods', foodController);
+app.use('/auth', authController);
 
 app.get('/', (req, res) => {
   res.render('index.ejs', {
@@ -44,7 +44,9 @@ app.get('/vip-lounge', (req, res) => {
   }
 });
 
-app.use('/auth', authController);
+const foodsController = require('./controllers/food.js');
+app.use('/users/:userId/foods', foodsController);
+
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);
