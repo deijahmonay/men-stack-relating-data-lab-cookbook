@@ -7,8 +7,8 @@
 </head>
 <body>
 <h1>Sign in</h1>
-<%- include('../partials/_navbar.ejs') %>
-<form action="/auth/sign-in" method="POST">
+<%- include('../partials/_navbar.ejs') %>  <!--- partial for navbar -->
+<form action="/auth/sign-in" method="POST"> <!-- form for user to sign-in-->
   <label for="username">Username:</label>
   <input type="text" name="username" id="username" required />
   <label for="password">Password:</label>
