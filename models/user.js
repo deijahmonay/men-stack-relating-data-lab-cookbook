@@ -1,10 +1,19 @@
 const mongoose = require('mongoose');
 
 const foodSchema = new mongoose.Schema({
-  name: {
+  food: {
     type: String,
     required: true,
-  }
+  },
+  perishable: {
+    type: String,
+    enum: ['yes', 'no'],
+    required: true,
+  },
+  category: {
+    type: String,
+    enum: ['bakery', 'beverages', 'dairy', 'deli', 'produce', 'protein', 'snacks'],
+  },
 });
 
 const userSchema = mongoose.Schema({
@@ -16,7 +25,7 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  pantry: [foodSchema],
+  pantry: [foodSchema]
 });
 
 
